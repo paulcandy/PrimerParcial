@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <item
+            android:id="@+id/BBdescFragment"
+            android:icon="@drawable/components"
+            android:enabled="true"
+            android:title="description" />
+
+        <item
+            android:id="@+id/BBuseMethodFragment"
+            android:icon="@drawable/wood_chisel_used_to_carve_wood"
+            android:enabled="true"
+            android:title = "MethodOfUse" />
+
+        <item
+            android:id="@+id/BBmatPrimFragment"
+            android:icon="@drawable/icons8_vista_general_2_50"
+            android:enabled="true"
+            android:title="MateriasPrimas" />
+</menu>

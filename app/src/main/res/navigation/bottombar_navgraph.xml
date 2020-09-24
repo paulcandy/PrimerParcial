@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottombar_navgraph"
+    app:startDestination="@id/BBdescFragment">
+
+    <fragment
+        android:id="@+id/BBdescFragment"
+        android:name="com.example.myapplication.fragments.BBdescFragment"
+        android:label="fragment_b_bdesc"
+        tools:layout="@layout/fragment_b_bdesc" />
+    <fragment
+        android:id="@+id/BBuseMethodFragment"
+        android:name="com.example.myapplication.fragments.BBuseMethodFragment"
+        android:label="fragment_b_buse_method"
+        tools:layout="@layout/fragment_b_buse_method" />
+    <fragment
+        android:id="@+id/BBmatPrimFragment"
+        android:name="com.example.myapplication.fragments.BBmatPrimFragment"
+        android:label="fragment_b_bmat_prim"
+        tools:layout="@layout/fragment_b_bmat_prim" />
+</navigation>
