@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.widget.Toolbar
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginActivity2 : AppCompatActivity() {
@@ -16,6 +17,8 @@ class LoginActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login2)
 
+      //  val toolbar = findViewById<Toolbar>(R.id.toolbar)
+      //  setSupportActionBar(toolbar)
 
     }
 }

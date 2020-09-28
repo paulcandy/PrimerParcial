@@ -1,12 +1,11 @@
 package com.example.myapplication.fragments
 
+
 import Entities.Product
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toolbar
+import android.view.*
+import androidx.appcompat.widget.Toolbar
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -34,9 +33,10 @@ class ListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val toolbar = v.findViewById<Toolbar>(R.id.toolbar)
-    //    setSupportActionBar(toolbar)
+        setHasOptionsMenu(true)
+      //  val toolbar = v.findViewById<android.widget.Toolbar>(R.id.toolbar)
+     //   setSupportActionBar(toolbar)
+      //  setSupportActionBar(toolbar)
 
         productos.add(
             Product(
@@ -88,7 +88,7 @@ class ListFragment : Fragment() {
         // Inflate the layout for this fragment
         recProducts = v.findViewById(R.id.recProducts)
 
-
+        setHasOptionsMenu(true)
 
 
         return v
@@ -129,4 +129,22 @@ class ListFragment : Fragment() {
 
 
          }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_toolbar, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        val id = when(item.itemId) {
+
+            R.id.action_add ->Snackbar.make(v, "add", Snackbar.LENGTH_SHORT).show()
+
+            R.id.action_edit ->Snackbar.make(v, "edit", Snackbar.LENGTH_SHORT).show()
+
+            else -> ""
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
