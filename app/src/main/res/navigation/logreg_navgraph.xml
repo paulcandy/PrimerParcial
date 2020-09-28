@@ -29,11 +29,12 @@
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
-            android:id="@+id/action_listFragment_to_bottombar_navgraph"
-            app:destination="@id/bottombar_navgraph" />
-        <action
             android:id="@+id/action_listFragment_to_bottomBarActivity"
-            app:destination="@id/bottomBarActivity" />
+            app:destination="@id/bottomBarActivity"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_listFragment_to_BBdescFragment2"
+            app:destination="@id/BBdescFragment2" />
     </fragment>
     <activity
         android:id="@+id/bottomBarActivity"
@@ -46,5 +47,14 @@
             app:argType="integer"
             android:defaultValue="0" />
     </activity>
-    <include app:graph="@navigation/bottombar_navgraph" />
+    <fragment
+        android:id="@+id/BBdescFragment2"
+        android:name="com.example.myapplication.fragments.BBdescFragment"
+        android:label="fragment_b_bdesc"
+        tools:layout="@layout/fragment_b_bdesc" >
+        <argument
+            android:name="positionRV"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

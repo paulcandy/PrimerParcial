@@ -2,12 +2,12 @@ package Entities
 
 class Product(name: String, price : Int, desc : String , urlImg : String, use : String, MP : String) {
 
-    public lateinit var productName : String
-    public  var productPrice : Int = 0
-    public lateinit var productDescription : String
-    public lateinit var productImage : String
-    public lateinit var productMethodOfUse : String
-    public lateinit var productMP : String
+    public var productName : String
+    public var productPrice : Int = 0
+    public var productDescription : String
+    public var productImage : String
+    public var productMethodOfUse : String
+    public var productMP : String
 
 
     init {

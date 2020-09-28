@@ -1,16 +1,30 @@
 package Entities
 
-class User (nombreUsuario : String, contrasena : String, nombrePersona : String) {
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-    public lateinit var username : String
-    public lateinit var password : String
-    public lateinit var nombre : String
-    public var hasAccess : Boolean = true
+@Entity(tableName = "users")
+class User (id : Int, username : String, password : String, fullname : String) {
+
+    @PrimaryKey
+    @ColumnInfo(name = "id")
+    var id : Int
+
+    @ColumnInfo(name = "username")
+    var username : String
+
+    @ColumnInfo(name = "password")
+    var password : String
+
+    @ColumnInfo(name = "fullname")
+    var fullname : String
 
     init{
-        this.username = nombreUsuario
-        this.password = contrasena
-        this.nombre = nombrePersona
+        this.id = id
+        this.username = username
+        this.password = password
+        this.fullname = fullname
     }
 }
 
