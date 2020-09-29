@@ -1,29 +1,31 @@
 package com.example.myapplication.fragments
 
 import Entities.User
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import com.example.myapplication.R
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.example.myapplication.R
+import com.example.myapplication.database.appDatabase
 import com.example.myapplication.database.userDAO
-
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_login.*
-
-import com.example.myapplication.database.appDatabase
 
 
 class LoginFragment : Fragment() {
 
     lateinit var v: View
     lateinit var btAccess: Button
+    lateinit var btRegister: Button
+
 
     private var db: appDatabase? = null
     private var userDao: userDAO? = null
@@ -36,6 +38,7 @@ class LoginFragment : Fragment() {
         db = appDatabase.getAppDataBase(v.context)
         userDao = db?.userDao()
         btAccess = v.findViewById(R.id.btAccess)
+        btRegister = v.findViewById(R.id.btRegister)
         // Inflate the layout for this fragment
         return v
     }
@@ -89,7 +92,10 @@ class LoginFragment : Fragment() {
 
 
 
-            val snackBar =Snackbar.make(it, msjSnackb, Snackbar.LENGTH_LONG).setAction("action", null)
+            val snackBar =Snackbar.make(it, msjSnackb, Snackbar.LENGTH_LONG).setAction(
+                "action",
+                null
+            )
             snackBar.setActionTextColor(Color.WHITE)
             val snackBarView = snackBar.view
             snackBarView.setBackgroundColor(Color.BLACK)
@@ -99,6 +105,22 @@ class LoginFragment : Fragment() {
             snackBar.show()
 
         }
+
+
+        btRegister.setOnClickListener {
+
+            val alertDialog: AlertDialog = AlertDialog.Builder(this.context).create()
+            alertDialog.setTitle("Reset...")
+            alertDialog.setMessage("Are you sure?")
+            alertDialog.setButton("ACEPTAR", DialogInterface.OnClickListener { dialog, which ->
+                // here you can add functions
+                Log.d("funciona", "el alert dialog")
+            })
+            alertDialog.setIcon(R.drawable.components)
+            alertDialog.show()
+        }
+
+
     }
 
 

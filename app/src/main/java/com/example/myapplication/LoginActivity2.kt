@@ -10,9 +10,14 @@ import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.widget.Toolbar
+import com.example.myapplication.adapters.ProductListAdapter
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginActivity2 : AppCompatActivity() {
+
+    public var flagAdd : Boolean = false
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login2)

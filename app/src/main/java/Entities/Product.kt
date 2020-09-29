@@ -1,21 +1,36 @@
 package Entities
 
-class Product(name: String, price : Int, desc : String , urlImg : String, use : String, MP : String) {
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-    public var productName : String
-    public var productPrice : Int = 0
-    public var productDescription : String
-    public var productImage : String
-    public var productMethodOfUse : String
-    public var productMP : String
+@Entity(tableName = "product")
+class Product(id: Int, name: String, price: Int, description: String, urlImg: String, useMethod: String, sourceMaterials: String) {
+
+    @PrimaryKey
+    @ColumnInfo(name = "id")
+    var id : Int = 0
+    @ColumnInfo(name = "name")
+    public var name : String
+    @ColumnInfo(name = "price")
+    public var price : Int = 0
+    @ColumnInfo(name = "description")
+    public var description : String
+    @ColumnInfo(name = "urlImg")
+    public var urlImg : String
+    @ColumnInfo(name = "useMethod")
+    public var useMethod : String
+    @ColumnInfo(name = "sourceMaterials")
+    public var sourceMaterials : String
 
 
     init {
-        this.productName = name
-        this.productPrice = price
-        this.productDescription = desc
-        this.productImage = urlImg
-        this.productMethodOfUse = use
-        this.productMP = MP
+        this.id = id
+        this.name = name
+        this.price = price
+        this.description = description
+        this.urlImg = urlImg
+        this.useMethod = useMethod
+        this.sourceMaterials = sourceMaterials
      }
 }

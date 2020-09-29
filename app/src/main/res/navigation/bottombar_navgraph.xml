@@ -9,15 +9,32 @@
         android:id="@+id/BBdescFragment"
         android:name="com.example.myapplication.fragments.BBdescFragment"
         android:label="fragment_b_bdesc"
-        tools:layout="@layout/fragment_b_bdesc" />
+        tools:layout="@layout/fragment_b_bdesc" >
+        <action
+            android:id="@+id/action_BBdescFragment_to_editItemFragment2"
+            app:destination="@id/editItemFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/BBuseMethodFragment"
         android:name="com.example.myapplication.fragments.BBuseMethodFragment"
         android:label="fragment_b_buse_method"
-        tools:layout="@layout/fragment_b_buse_method" />
+        tools:layout="@layout/fragment_b_buse_method" >
+        <action
+            android:id="@+id/action_BBuseMethodFragment_to_editItemFragment2"
+            app:destination="@id/editItemFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/BBmatPrimFragment"
         android:name="com.example.myapplication.fragments.BBmatPrimFragment"
         android:label="fragment_b_bmat_prim"
-        tools:layout="@layout/fragment_b_bmat_prim" />
+        tools:layout="@layout/fragment_b_bmat_prim" >
+        <action
+            android:id="@+id/action_BBmatPrimFragment_to_editItemFragment2"
+            app:destination="@id/editItemFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/editItemFragment2"
+        android:name="com.example.myapplication.fragments.EditItemFragment"
+        android:label="fragment_edit_item"
+        tools:layout="@layout/fragment_edit_item" />
 </navigation>

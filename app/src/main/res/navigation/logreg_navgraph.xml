@@ -35,6 +35,12 @@
         <action
             android:id="@+id/action_listFragment_to_BBdescFragment2"
             app:destination="@id/BBdescFragment2" />
+        <action
+            android:id="@+id/action_listFragment_to_editItemFragment"
+            app:destination="@id/editItemFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_settingsActivity"
+            app:destination="@id/settingsActivity" />
     </fragment>
     <activity
         android:id="@+id/bottomBarActivity"
@@ -57,4 +63,18 @@
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
+    <fragment
+        android:id="@+id/editItemFragment"
+        android:name="com.example.myapplication.fragments.EditItemFragment"
+        android:label="fragment_edit_item"
+        tools:layout="@layout/fragment_edit_item" >
+        <action
+            android:id="@+id/action_editItemFragment_to_listFragment2"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.example.myapplication.SettingsActivity"
+        android:label="activity_settings"
+        tools:layout="@layout/activity_settings" />
 </navigation>

@@ -1,5 +1,6 @@
 package com.example.myapplication.database
 
+import Entities.Product
 import android.content.Context
 import android.util.Log
 import androidx.room.Database
@@ -7,11 +8,13 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import Entities.User
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [User::class, Product::class], version = 1, exportSchema = false)
 
 public  abstract class appDatabase : RoomDatabase() {
 
+
     abstract fun userDao(): userDAO
+    abstract fun productDao(): ProductDAO
 
     companion object {
         var INSTANCE: appDatabase? = null

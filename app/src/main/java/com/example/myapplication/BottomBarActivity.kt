@@ -19,6 +19,8 @@ class BottomBarActivity : AppCompatActivity() {
     private lateinit var navHostFragment : NavHostFragment
 
     var position : Int = 0
+    public var flagEdit : Boolean = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,9 @@ class BottomBarActivity : AppCompatActivity() {
         bottomNavView = findViewById(R.id.bottomNavigationView)
 
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
+
+
+
     }
 
     public var text1 :String = ""
